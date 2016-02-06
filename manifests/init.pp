@@ -4,10 +4,10 @@
 # Examples
 #
 #   include zsh
-class zsh {
+class zsh ($ensure = 'present') {
   require boxen::config
 
-  package { 'zsh': }
+  package { 'zsh': ensure => $ensure }
 
   file_line { 'add zsh to /etc/shells':
     path    => '/etc/shells',
